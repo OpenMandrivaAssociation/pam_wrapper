@@ -103,9 +103,6 @@ the header files for libpamtest
 %install
 %make_install -C build
 
-%check
-%ctest
-
 %files
 %{_libdir}/pkgconfig/pam_wrapper.pc
 %{_libdir}/libpam_wrapper.so
