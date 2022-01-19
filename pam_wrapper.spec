@@ -14,7 +14,6 @@ License:        GPLv3+
 Url:            http://cwrap.org/
 Group:          Development/Other
 Source0:        https://ftp.samba.org/pub/cwrap/%{name}-%{version}.tar.gz
-Source1:        https://ftp.samba.org/pub/cwrap/%{name}-%{version}.tar.gz.asc
 
 BuildRequires:  gnupg2
 BuildRequires:  cmake
@@ -92,7 +91,6 @@ the header files for libpamtest
 
 
 %prep
-gpgv2 --quiet --keyring %{SOURCE2} %{SOURCE1} %{SOURCE0}
 %autosetup -S git
 
 
