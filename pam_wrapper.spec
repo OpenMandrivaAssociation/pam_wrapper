@@ -6,8 +6,8 @@
 %define testdevname %mklibname pamtest -d
 
 Name:           pam_wrapper
-Version:        1.1.3
-Release:        %mkrel 7
+Version:        1.1.4
+Release:        1
 
 Summary:        A tool to test PAM applications and PAM modules
 License:        GPLv3+
@@ -15,13 +15,11 @@ Url:            http://cwrap.org/
 Group:          Development/Other
 Source0:        https://ftp.samba.org/pub/cwrap/%{name}-%{version}.tar.gz
 Source1:        https://ftp.samba.org/pub/cwrap/%{name}-%{version}.tar.gz.asc
-Source2:        pam_wrapper.keyring
 
-BuildRequires:  gcc
 BuildRequires:  gnupg2
 BuildRequires:  cmake
-BuildRequires:  libcmocka-devel
-BuildRequires:  python3-devel
+BuildRequires:  pkgconfig(cmocka)
+BuildRequires:  pkgconfig(python)
 BuildRequires:  pam-devel
 BuildRequires:  doxygen
 BuildRequires:  git
@@ -81,13 +79,13 @@ If you plan to develop tests for a PAM module you can use this library,
 which simplifies testing of modules. This sub package includes the header
 files for libpamtest.
 
-%package -n python3-libpamtest
+%package -n python-libpamtest
 Summary:        A python wrapper for libpamtest
 License:        GPLv3+
 Requires:       pam_wrapper = %{version}-%{release}
 Requires:       %{testlibname} = %{version}-%{release}
 
-%description -n python3-libpamtest
+%description -n python-libpamtest
 If you plan to develop python tests for a PAM module you can use this
 library, which simplifies testing of modules. This subpackage includes
 the header files for libpamtest
@@ -141,5 +139,5 @@ gpgv2 --quiet --keyring %{SOURCE2} %{SOURCE1} %{SOURCE0}
 %{_libdir}/cmake/pamtest/pamtest-config.cmake
 %{_includedir}/libpamtest.h
 
-%files -n python3-libpamtest
-%{python3_sitearch}/pypamtest.so
+%files -n python-libpamtest
+%{python_sitearch}/pypamtest.so
