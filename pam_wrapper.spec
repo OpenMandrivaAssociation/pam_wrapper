@@ -98,10 +98,10 @@ the header files for libpamtest
 %cmake \
   -DUNIT_TESTING=ON
 
-%cmake_build
+%make_build
 
 %install
-%cmake_install
+%make_install -C build
 
 %check
 %ctest
