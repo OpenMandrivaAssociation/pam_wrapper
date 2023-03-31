@@ -7,7 +7,7 @@
 
 Name:           pam_wrapper
 Version:        1.1.4
-Release:        1
+Release:        2
 
 Summary:        A tool to test PAM applications and PAM modules
 License:        GPLv3+
