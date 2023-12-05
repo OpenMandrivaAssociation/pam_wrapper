@@ -6,8 +6,8 @@
 %define testdevname %mklibname pamtest -d
 
 Name:           pam_wrapper
-Version:        1.1.4
-Release:        2
+Version:        1.1.5
+Release:        1
 
 Summary:        A tool to test PAM applications and PAM modules
 License:        GPLv3+
